@@ -1,0 +1,42 @@
+<%- include('partials/header.ejs'); -%>
+
+<div class="form-container">
+  <% if (locals.alertMessage) { %>
+  <div class="alert alert-danger"><%= alertMessage %></div>
+  <% } %>
+  <h2 class="username-heading">Sign in</h2>
+  <div class="col-sm-4">
+    <div class="card google-sign-in">
+      <div class="card-body">
+        <a class="btn btn-block" href="/auth/google" role="button">
+          <i class="fab fa-google"></i>
+          Sign In with Google
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card google-sign-in">
+      <div class="card-body">
+        <a class="btn btn-block" href="/auth/facebook" role="button">
+          <i class="fab fa-facebook fbb" aria-hidden="true"></i>
+          Sign In with Facebook
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <form action="/login" method="post">
+    <button type="submit" class="btn btn-primary btn-md px-4 gap-3">Go!</button>
+  </form>
+  <div class="sign-up-container">
+    <p class="sign-up">
+      Not a member?
+      <span class="sign-now"
+        ><a class="link" href="/create-username">Sign up Now!</a></span
+      >
+    </p>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs'); -%>

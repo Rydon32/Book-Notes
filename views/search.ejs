@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs'); -%>
+
+<% if (locals.books) { %>
+    
+        <h1 class="results-heading">Results for <%= query  %>:</h1>
+        <div class="grid">
+      <% books.forEach((book, index) => { %>
+
+            <div class="grid-item">
+                <div class="book">
+          <strong class="book-title">Title:</strong> <%= book.title %><br>
+        
+          <strong>Author:</strong> <%= book.author_name ? book.author_name[0] : "Unknown" %><br>
+          <img src="https://covers.openlibrary.org/b/olid/<%= book.cover_edition_key %>-M.jpg" alt="Book Cover">
+
+        
+          
+          <!-- Form for each book -->
+          <form action="/choose-book" method="post">
+
+            <input type="hidden" name="title" value="<%= book.title %>">
+            <input type="hidden" name="author" value="<%= book.author_name ? book.author_name[0] : "Unknown" %>">
+            <input type="hidden" name="imgSrc" value="<%= `https://covers.openlibrary.org/b/olid/${book.cover_edition_key}-M.jpg` %>">
+            <button class="book-choice-button" type="submit">Choose</button>
+          </form>
+        </div>
+    </div>
+    
+      <% }); %>
+    </div>
+      <% } %>
+
+<%- include('partials/footer.ejs'); -%>

@@ -1,0 +1,221 @@
+:root{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+*{
+    margin:0;
+    padding:0;
+}
+.link{
+    color: white;
+}
+.link:hover{
+    color: #0b5ed7;
+}
+.user-taken{
+    display: block;
+    padding-bottom: 100px;
+}
+.sort-buttons{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.google-sign-in{
+    margin: 20px;
+}
+.results-heading{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+.grid{
+    display: grid;
+    grid-template-columns:[main-start] 300px [content-start] 300px;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin: 0;
+
+
+}
+.book-choice-button{
+    margin-top: 20px;
+}
+.rating-div{
+    margin-bottom: 20px;
+}
+.notes{
+    margin-bottom: 40px;
+}
+.review-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    min-height: 50vh;
+    flex-wrap: wrap;
+    margin-top: 40px;
+
+}
+.grid-item{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .book {
+    margin-bottom: 10px;
+  }
+  
+  .book img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+.book-display{
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+.book-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left; /* Align text details to the left */
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+.book-notes{
+    margin-top: 20px    ;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+    font-size: 0.8rem;
+}
+.dotted{
+    width: 20%;
+    border-style: dotted none none;
+    border-width: 7px;
+    border-color: white;
+}
+.book-details {
+    text-align: center; /* Align book details to the left */
+}
+.book-img {
+    max-height: 100px;
+        max-width: 100px; /* Adjust image size as needed */
+        margin-right: 10px; /* Adjust margin as needed */
+    height: 100px;
+    width: 100px;
+}
+
+.book-labels{
+    margin-bottom: 10px;
+}
+body{
+    color: white;
+    background-color: black;
+}
+html{
+    background-color: black;
+    color: white;
+}
+
+main{
+    background-color: black;
+    color: white;
+}
+.sign-up{
+    color: white;
+}
+.sign-up-container{
+    padding-top: 20px;
+}
+.sign-now{
+    text-decoration: underline;
+}
+.footer{
+    margin: 0;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 5%;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.username-heading{
+    padding-bottom: 20px;
+}
+.logo{
+    height: 200px;
+    width: 600px;
+}
+.book-display {
+    display: grid;
+    grid-template-columns: [main-start] 600px [content-start] 300px; /* Creates a 3-column layout */
+    gap: 80px; /* Adjusts the space between grid items */
+  }
+  .book-flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+.custom-card{
+    font-size: 1rem;
+
+    margin-bottom: 20px;
+}
+
+.container{
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+
+.card-img-top {
+    max-height: 400px;
+    max-width: 450px;
+  }
+
+  .custom-card-size {
+    width: 290px; 
+    height: auto; 
+    margin: 0 auto;
+  }
+
+  .note-toggle{
+    margin-top: 5px;
+  }
+  .note-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    height: 54px;
+  }
+  
+

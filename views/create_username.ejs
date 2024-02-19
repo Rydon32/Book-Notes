@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs'); -%>
+<div class="form-container">
+  <% if (locals.alertMessage) { %>
+    <div class="alert alert-danger">
+        <%= alertMessage %>
+    </div>
+<% } %>
+    <h2 class="username-heading">Please create your username</h2>
+    <form action="/create" method="post">
+        <div class="input-group mb-3">
+
+            <input type="text" class="form-control" placeholder="Username" name="username" aria-label="Username" autocomplete="off" required aria-describedby="basic-addon1">
+          </div>
+          <button type="submit" class="btn btn-primary btn-md px-4 gap-3">Go!</button>
+    </form>
+
+   
+
+  </div>
+<%- include('partials/footer.ejs'); -%>

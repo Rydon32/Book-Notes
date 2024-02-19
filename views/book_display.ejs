@@ -1,0 +1,104 @@
+<%- include('partials/header.ejs'); -%> <% if (locals.books.length == 0 ) { %>
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5">No Books?</h1>
+  <h1 class="display-5 fw-bold text-body-emphasis" style="color: white">
+    Centered hero
+  </h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Search for a book you've read to get started!</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <form action="/search-books" method="post">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Book Title"
+            name="query"
+            aria-label="Username"
+            autocomplete="off"
+            required
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-md px-4 gap-3">
+          Go!
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<% } %> <% if (locals.books.length > 0 ) { %>
+<nav
+  class="navbar navbar-expand-sm bg-dark navbar-dark d-flex justify-content-center"
+>
+  <a class="navbar-brand me-4" href="/book-display">MyBookNotes</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav">
+    <a class="nav-link" href="/search">Book Search</a>
+  </div>
+</nav>
+<h1 class="results-heading"><%= username %>'s book collection</h1>
+<div class="sort-buttons">
+  <div class="sort-button">
+    <a href="/book-display?sortBy=recency"
+      ><button class="btn btn-secondary btn-md px-4 gap-3">
+        Sort by Recency
+      </button></a
+    >
+  </div>
+
+  <div class="sort-button">
+    <a href="/book-display?sortBy=rating"
+      ><button class="btn btn-secondary btn-md px-4 gap-3">
+        Sort by Rating
+      </button></a
+    >
+  </div>
+  <div class="sort-button">
+    <a href="/book-display?sortBy=title"
+      ><button class="btn btn-secondary">Sort by Title</button></a
+    >
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% books.forEach((book) => { %>
+    <div class="col-sm-6 col-lg-4 mb-5 card-sizing">
+      <div class="card custom-card-size h-100">
+        <img src="<%= book.imgsrc %>" class="card-img-top" alt="Book Cover" />
+        <div class="card-body">
+          <h5 class="card-title"><%= book.title %></h5>
+          <p class="card-text">
+            <strong>Author:</strong> <%= book.author_name %><br />
+            <strong>Rating:</strong> <%= book.rating %><br />
+            <strong>Date Read:</strong> <%= (book.date_read instanceof Date ?
+            book.date_read.toLocaleDateString() : 'N/A') %>
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="note-text">Notes: <%= book.note %></div>
+          <button class="btn btn-primary note-toggle" type="button">
+            Show More
+          </button>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<% } %>
+<script src="js/toggleNotes.js"></script>
+<%- include('partials/footer.ejs'); -%>

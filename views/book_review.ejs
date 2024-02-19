@@ -1,0 +1,59 @@
+<%- include('partials/header.ejs'); -%>
+  
+        <h1 class="results-heading">Leave your rating and notes for: <i><%= title  %><i></h1>
+        <div>
+
+
+            <div class="grid-item">
+                <div class="book">
+          <strong class="book-title">Title:</strong> <%= title %><br>
+        
+          <strong>Author:</strong> <%= author %><br>
+          <img src="<%= imgSrc %>" alt="Book Cover">
+
+        
+          
+          <!-- Form for selected book -->
+          <div class="review-form-container">
+          <form action="/post-book" method="post">
+
+            <input type="hidden" name="title" value="<%= title %>">
+                <input type="hidden" name="author" value="<%= author %>">
+                <input type="hidden" name="imgSrc" value="<%= imgSrc %>">
+                
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="date" class="form-label">Date Read:</label>
+                    <input type="date" name="date" class="form-control" placeholder="Date Read" name="username" aria-label="Username" autocomplete="off" required aria-describedby="basic-addon1">
+                  </div>
+                <div class="col rating-div">
+                    <label for="rating" class="form-label">Rating:</label>
+            <select id="rating" name="rating"  class="form-select" aria-label="Default select example" required>
+                
+                <option value="" selected disabled hidden  >Select a Rating</option>
+                <% for (let i = 1; i < 11; i++ ){ %>
+                    <option value="<%= i %>"><%= i %></option>
+
+                <% } %>
+            
+              </select>
+            </div>
+            </div>
+            <div class="mb-3">
+            <label for="notes" class="form-label">Notes:</label>
+                <textarea name="notes" class="form-control notes" placeholder="In chapter 1 the most memorable....."  cols="80" rows="10"></textarea>
+            </div>
+              
+              <button type="submit" class="btn btn-primary btn-md px-4 gap-3">Go!</button>
+            
+          </form>
+          
+        </div>
+    </div>
+
+    </div>
+    <script src="js/date.js"></script>
+
+
+
+<%- include('partials/footer.ejs'); -%>
